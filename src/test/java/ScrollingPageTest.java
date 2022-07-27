@@ -35,7 +35,7 @@ public class ScrollingPageTest extends Test_Base {
     @Test
     public void testScrollToCoordinatesField() throws InterruptedException {
         scrollingPage.scrollToCoordinatesField();
-       Assert.assertEquals(scrollingPage.getCoordinatesFromField(), "X: 744Y: 816");
+       Assert.assertEquals(scrollingPage.getCoordinatesFromField(), "X: 488Y: 916");
     }
 
     @After
