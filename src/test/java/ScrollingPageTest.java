@@ -15,25 +15,25 @@ public class ScrollingPageTest extends Test_Base {
     }
 
     @Test
-    public void testScrollToFirstField() throws InterruptedException {
+    public void testScrollToFirstField() {
         scrollingPage.scrollToFirstField();
         Assert.assertEquals(scrollingPage.getColourOfField(), "background: rgb(26, 255, 26); font-size: 24px; text-align: center;");
     }
 
     @Test
-    public void testScrollToLeftScrollCounter() throws InterruptedException {
+    public void testScrollToLeftScrollCounter() {
         scrollingPage.scrollToLeftScrollCounter();
         Assert.assertEquals(scrollingPage.getAmountForEntriesToLeftScrollCounter(), "1 Entries");
     }
 
     @Test
-    public void testScrollToRightScrollCounter() throws InterruptedException {
+    public void testScrollToRightScrollCounter() {
         scrollingPage.scrollToRightScrollCounter();
         Assert.assertEquals(scrollingPage.getAmountForEntriesToRightScrollCounter(), "1 Entries");
     }
 
     @Test
-    public void testScrollToCoordinatesField() throws InterruptedException {
+    public void testScrollToCoordinatesField() {
         scrollingPage.scrollToCoordinatesField();
        Assert.assertEquals(scrollingPage.getCoordinatesFromField(), "X: 744Y: 816");
     }
