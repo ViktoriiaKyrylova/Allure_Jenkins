@@ -1,7 +1,10 @@
 - **To start the project click here:** 
 ```bash
-mv target/site/allure-maven-plugin/history/. target/allure-results/; mvn allure:report;
-mvn clean test; mvn allure:report; 
+mvn allure:report;
+mv src/test/resources/history/. target/allure-results;
+rm -r target/allure-results/history/.;
+mv target/site/allure-maven-plugin/history/. src/test/resources; 
+mvn test; mvn allure:report;
 ```
 
 - **To start the project with sh click here:**

@@ -1,6 +1,8 @@
 import base.Test_Base;
 
 import io.qameta.allure.Allure;
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,7 +25,8 @@ public class AccordionItemsTextAppearTest extends Test_Base {
         accordionItemsTextAppearPage.openAccordionItemsTextAppearLink();
         Allure.addAttachment("Result", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
-
+    @DisplayName("Manual testing")
+    @Description("Must show text about manual testing")
     @Test
     public void testManualTestingButtonClick() {
 
