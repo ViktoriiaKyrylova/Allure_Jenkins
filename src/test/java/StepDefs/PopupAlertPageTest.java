@@ -1,13 +1,15 @@
+package StepDefs;
+
 import base.Test_Base;
 import org.junit.Assert;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import java.awt.*;
 
 public class PopupAlertPageTest extends Test_Base {
 
-    @Before
+    @BeforeMethod
     public void beforeMethod() throws InterruptedException, AWTException {
         initialization();
         popupAlertPage.openPopupAlertLink();
@@ -49,7 +51,7 @@ public class PopupAlertPageTest extends Test_Base {
         Assert.assertEquals(popupAlertPage.getMessageAfterConfirmBoxButtonClick(), "You pressed OK!");
     }
 
-    @After
+    @AfterMethod
     public void afterMethod() {
         disable();
     }

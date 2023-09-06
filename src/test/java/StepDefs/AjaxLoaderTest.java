@@ -1,8 +1,10 @@
+package StepDefs;
+
 import base.Test_Base;
 import org.junit.Assert;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 
 import java.awt.*;
@@ -10,7 +12,7 @@ import java.awt.*;
 public class AjaxLoaderTest extends Test_Base {
 
 
-        @Before
+        @BeforeMethod
         public void beforeMethod() throws InterruptedException, AWTException {
             initialization();
             ajaxLoaderPage.openAjaxLoaderLink();
@@ -24,7 +26,7 @@ public class AjaxLoaderTest extends Test_Base {
             Assert.assertEquals(ajaxLoaderPage.getPopupMessage(), "Well Done For Waiting....!!!");
             ajaxLoaderPage.closePopupMessage();
         }
-        @After
+        @AfterMethod
         public void afterMethod() {
             disable();
         }

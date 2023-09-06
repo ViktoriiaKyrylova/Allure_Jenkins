@@ -1,3 +1,5 @@
+package StepDefs;
+
 import base.Test_Base;
 
 import io.qameta.allure.Allure;
@@ -7,19 +9,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.junit.Assert;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import java.awt.*;
 import java.io.ByteArrayInputStream;
+import java.net.MalformedURLException;
 
 
 public class AccordionItemsTextAppearTest extends Test_Base {
 
-    @Before
+    @BeforeMethod
     public void beforeMethod() throws InterruptedException, AWTException {
         initialization();
         accordionItemsTextAppearPage.openAccordionItemsTextAppearLink();
@@ -59,7 +62,7 @@ public class AccordionItemsTextAppearTest extends Test_Base {
         Allure.addAttachment("Result", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
 
-    @After
+    @AfterMethod
     public void afterMethod() {
         disable();
     }

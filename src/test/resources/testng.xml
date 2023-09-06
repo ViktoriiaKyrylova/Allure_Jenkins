@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Tests" parallel="false" configfailurepolicy="continue">
+    <test name="First Test">
+        <classes>
+            <class name="StepDefs.AccordionItemsTextAppearTest"/>
+            <class name="StepDefs.ActionPageTest"/>
+            <class name="StepDefs.AjaxLoaderTest"/>
+            <class name="StepDefs.AutocompletePageTest"/>
+            <class name="StepDefs.ClickButtonTest"/>
+            <class name="StepDefs.ContactUsTest"/>
+            <class name="StepDefs.DatePickerPageTest"/>
+            <class name="StepDefs.DropdownMenuCheckboxRadioButtonTest"/>
+            <class name="StepDefs.FileUploadPageTest"/>
+            <class name="StepDefs.HiddenElementsPageTest"/>
+            <class name="StepDefs.IFramePageTest"/>
+            <class name="StepDefs.LoginPortalTest"/>
+            <class name="StepDefs.PageObjectModelPageTest"/>
+            <class name="StepDefs.PopupAlertPageTest"/>
+            <class name="StepDefs.ScrollingPageTest"/>
+            <class name="StepDefs.ToDoListTest"/>
+        </classes>
+    </test>
+</suite>

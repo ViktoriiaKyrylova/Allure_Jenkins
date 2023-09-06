@@ -1,14 +1,16 @@
+package StepDefs;
+
 import base.Test_Base;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 
 import java.awt.*;
 
 public class AutocompletePageTest extends Test_Base {
 
-    @Before
+    @BeforeMethod
     public void beforeMethod() throws InterruptedException, AWTException {
         initialization();
         autocompletePage.openAutocompletePage();
@@ -21,7 +23,7 @@ public class AutocompletePageTest extends Test_Base {
         autocompletePage.selectItemFromList();
     }
 
-    @After
+    @AfterMethod
     public void afterMethod() {
         disable();
     }

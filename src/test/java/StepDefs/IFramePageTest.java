@@ -1,14 +1,16 @@
+package StepDefs;
+
 import base.Test_Base;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.awt.*;
 
 public class IFramePageTest extends Test_Base {
 
 
-    @Before
+    @BeforeMethod
     public void beforeMethod() throws InterruptedException, AWTException {
         initialization();
         iFramePage.openIFrameLink();
@@ -28,7 +30,7 @@ public class IFramePageTest extends Test_Base {
         iFramePage.workWithPageObjectModelCheckOurProductsAudio();
     }
 
-    @After
+    @AfterMethod
     public void afterMethod() {
         disable();
     }

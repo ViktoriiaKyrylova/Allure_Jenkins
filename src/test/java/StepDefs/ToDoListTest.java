@@ -1,16 +1,18 @@
+package StepDefs;
+
 import base.Test_Base;
 import locators.ToDoListLocators;
 import org.junit.Assert;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import java.awt.*;
 
 import static java.lang.Thread.sleep;
 
 public class ToDoListTest extends Test_Base {
 
-    @Before
+    @BeforeMethod
     public void beforeMethod() throws AWTException, InterruptedException {
         initialization();
         toDoListPage.openToDoPageLink();
@@ -41,7 +43,7 @@ public class ToDoListTest extends Test_Base {
         toDoListPage.markAllToDoReady();
         Assert.assertTrue(element(ToDoListLocators.mark_todo_ready).isDisplayed());
     }
-    @After
+    @AfterMethod
     public void afterMethod() {
         disable();
     }

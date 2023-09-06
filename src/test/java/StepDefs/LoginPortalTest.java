@@ -1,13 +1,15 @@
+package StepDefs;
+
 import base.Test_Base;
 import org.junit.Assert;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import java.awt.*;
 
 public class LoginPortalTest extends Test_Base {
 
-    @Before
+    @BeforeMethod
     public void beforeMethode() throws AWTException, InterruptedException {
         initialization();
         loginPortalPage.clickOnLoginPortalLink();
@@ -24,7 +26,7 @@ public class LoginPortalTest extends Test_Base {
         loginPortalPage.acceptAlert();
     }
 
-    @After
+    @AfterMethod
     public void afterMethod() {
         disable();
     }
