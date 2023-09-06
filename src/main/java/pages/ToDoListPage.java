@@ -4,6 +4,7 @@ import base.Test_Base;
 import locators.MainPageLocators;
 import locators.ToDoListLocators;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -31,8 +32,9 @@ public class ToDoListPage extends Test_Base {
     }
 
     public void submitToDoText() {
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+        action.sendKeys(Keys.RETURN);
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
     public int countFieldInList() {

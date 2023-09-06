@@ -25,7 +25,7 @@ public class Test_Base {
     public static WebDriver driver;
     public static Properties prop;
     public static Actions action;
-    public static Robot robot;
+//    public static Robot robot;
     public static WebDriverWait webDriverWait;
     public static JavascriptExecutor js;
     public static LocalDate date;
@@ -69,7 +69,7 @@ public class Test_Base {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         action = new Actions(driver);
-        robot = new Robot();
+//        robot = new Robot();
         date = LocalDate.now();
         js = (JavascriptExecutor) driver;
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
