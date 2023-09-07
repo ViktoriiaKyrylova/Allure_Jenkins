@@ -20,7 +20,7 @@ public class DatePickerPage extends Test_Base {
         int day = date.getDayOfMonth();
         int month = date.getMonthValue();
         int year = date.getYear();
-        return "0" + month + "-" + day + "-" + year;
+        return "0" + month + "-0" + day + "-" + year;
     }
 
     public String getShowedDate() {

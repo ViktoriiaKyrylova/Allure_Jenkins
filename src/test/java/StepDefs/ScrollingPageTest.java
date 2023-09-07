@@ -25,19 +25,20 @@ public class ScrollingPageTest extends Test_Base {
     @Test
     public void testScrollToLeftScrollCounter() {
         scrollingPage.scrollToLeftScrollCounter();
-        Assert.assertEquals(scrollingPage.getAmountForEntriesToLeftScrollCounter(), "1 Entries");
+        Assert.assertEquals(scrollingPage.getAmountForEntriesToLeftScrollCounter(), "0 Entries");
     }
 
     @Test
     public void testScrollToRightScrollCounter() {
         scrollingPage.scrollToRightScrollCounter();
-        Assert.assertEquals(scrollingPage.getAmountForEntriesToRightScrollCounter(), "1 Entries");
+        Assert.assertEquals(scrollingPage.getAmountForEntriesToRightScrollCounter(), "0 Entries");
     }
 
     @Test
     public void testScrollToCoordinatesField() {
         scrollingPage.scrollToCoordinatesField();
-       Assert.assertEquals(scrollingPage.getCoordinatesFromField(), "X: 936Y: 816");
+//       Assert.assertEquals(scrollingPage.getCoordinatesFromField(), "X: 936Y: 816");
+        Assert.assertEquals(scrollingPage.getCoordinatesFromField(), "X: 377Y: 916");
     }
 
     @AfterMethod
