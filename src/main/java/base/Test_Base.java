@@ -25,7 +25,7 @@ public class Test_Base {
     public static WebDriver driver;
     public static Properties prop;
     public static Actions action;
-//    public static Robot robot;
+    //    public static Robot robot;
     public static WebDriverWait webDriverWait;
     public static JavascriptExecutor js;
     public static LocalDate date;
@@ -62,20 +62,24 @@ public class Test_Base {
 
     public static void initialization() throws AWTException, InterruptedException {
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
+        if (isRunningOnTeamcityAgent()) {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--no-sandbox");
+            options.addArguments("--headless");
+            options.addArguments("--disable-dev-shm-usage");
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver(options);
+        } else
+        {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
         action = new Actions(driver);
-//        robot = new Robot();
         date = LocalDate.now();
         js = (JavascriptExecutor) driver;
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-//        driver.manage().window().setSize(new Dimension(1600, 1200));
         driver.get(prop.getProperty("url"));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         initObjects();
@@ -112,7 +116,7 @@ public class Test_Base {
         driver.switchTo().window(newTab);
     }
 
-    public CharSequence selectPathToTheFile(){
+    public CharSequence selectPathToTheFile() {
         return new File(prop.getProperty("path")).getAbsolutePath();
     }
 
@@ -121,12 +125,17 @@ public class Test_Base {
         driver.quit();
     }
 
-    public void getAlert(){
+    public void getAlert() {
         alert = driver.switchTo().alert();
     }
 
     public static WebElement element(By ByElement) {
 
         return driver.findElement(ByElement);
+    }
+
+    private static boolean isRunningOnTeamcityAgent() {
+        String env = System.getenv("TC_BUILD");
+        return env != null;
     }
 }
